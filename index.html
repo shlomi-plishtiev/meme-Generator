@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Generator</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/mobile.css">
 </head>
 
 <body>
@@ -25,21 +26,37 @@
             <a href="#" class="close" title="Press to erase this line.">×</a>
             <input type="text" placeholder="Quick-search for meme templates" id="quicksearch">
         </div>
-        <section class="gallery">
-        </section>
+
 
         <section class="canvas-container">
             <canvas class="myCanvas" width="400" height="400"></canvas>
+            <input type="text" class="topText" placeholder="Top text" oninput="onTextInputChange(event)">
+            <input hidden type="text" class="topText2" placeholder="Bottom text" oninput="onTextInputChange(event)">
+            <button onclick="addLineHandler()">Add Line</button>
+            <button class="switchLine" onclick="switchLineHandler()">Switch Line</button>
+            
+            <!-- <button class="addLine" onclick="addLineHandler()"><img src="DESIGN/Meme1 - Sergei/ICONS/add.png"></button> -->
+            <input type="color" class="colorPicker" onchange="onColorChange(event)" title="Choose text color">
+
+            <button class="fontSize" onclick="onIncreaseFont()"><img
+                    src="DESIGN/Meme1 - Sergei/ICONS/increase font - icon.png"></button>
+            <button class="fontSize" onclick="onDecreaseFont()"><img
+                    src="DESIGN/Meme1 - Sergei/ICONS/decrease font - icon.png"></button>
+            <button class="download" onclick="onDownloadCanvas()"><img
+                    src="DESIGN/Meme1 - Sergei/ICONS/downlaod.png"></button>
         </section>
-        <section class="text-input">
-            <input type="text" id="textInput" placeholder="Type text here...">
+        <section class="gallery">
         </section>
+
     </main>
 
     <footer></footer>
 
     <script src="js/memeService.js" type="module"></script>
-    <script src="js/main-controller.js"  type="module"></script>
+    <script src="js/main-controller.js" type="module"></script>
+    <script src="js/galleryController.js" type="module"></script>
+    <script src="js/Upload-Image.js" type="module"></script>
+
 
 </body>
 

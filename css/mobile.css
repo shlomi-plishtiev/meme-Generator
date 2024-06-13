@@ -1,0 +1,19 @@
+@media (max-width: 600px) {
+    .main-header, .main-nav-container {
+        text-align: center;
+    }
+
+    .main-nav ul {
+        padding: 0;
+    }
+
+    .main-nav ul li {
+        display: inline;
+        margin: 0 10px;
+    }
+}
+@media (max-width: 420px) {
+  .download, .fontSize {
+      height: 48px;
+    }
+  }

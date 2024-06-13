@@ -16,9 +16,7 @@ body {
 }
 
 img {
-    height: 50px;
-    width: 200px;
-    box-sizing: border-box;
+    height: 40px;
 }
 
 .main-nav a {
@@ -58,11 +56,12 @@ img {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     gap: 10px;
-    width: 100%;
-    max-width: 600px;
+    width: 900px;
+    max-width: 100%;
     margin-bottom: 20px;
+    margin: auto;
 }
 
 .gallery img {
@@ -78,33 +77,8 @@ img {
     transform: scale(1.05);
 }
 
-.canvas-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 400px;
-    height: 400px;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin: 40px;
-
-}
-
-canvas {
-    border: 1px solid #000;
-}
-.search {
-    color: wheat;
-    background-color: rgb(18, 99, 73);
-    padding: 10px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-}
-
 .scratch {
+    margin: auto;
     border-radius: 8px;
     padding: 20px;
     width: 300px;
@@ -145,3 +119,79 @@ canvas {
     border-radius: 4px;
 }
 
+.text-input {
+    margin-top: 10px;
+    text-align: center;
+}
+
+.canvas-container {
+    display: none;
+    text-align: center;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    width: 90%;
+    max-width: 500px;
+}
+
+.myCanvas {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+}
+
+.topText,.topText2 {
+    border: none;
+    height: 34px;
+    border-radius: 22px;
+    box-sizing: border-box;
+    padding: 0 18px;
+    margin: auto;
+}
+
+.topText[type="text"],.topText2[type="text"] {
+    background: rgba(0, 0, 0, 0.33);
+    color: #000000;
+    width: 250px;
+    margin-bottom: 10px;
+}
+
+.colorPicker {
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    height: 50px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.download,
+.fontSize,
+.addLine {
+    background-color: #e7e7e7;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    margin-bottom: 10px;
+}
+
+.download:hover,
+.fontSize:hover,
+.colorPicker:hover,
+.addLine:hover {
+    background-color: #b6b4b4;
+    transform: scale(1.05);
+}
+
+.download:active,
+.fontSize:active,
+.colorPicker:active,
+.addLine:active {
+    background-color: #e0e0e0;
+}
