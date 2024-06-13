@@ -1,0 +1,147 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: antiquewhite;
+    overflow-x: hidden;
+}
+
+img {
+    height: 50px;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+.main-nav a {
+    text-decoration: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    color: #e19e22;
+    font-weight: 700;
+    font-family: "Lato";
+    filter: drop-shadow(0px 1px 0px #1e1e1e);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 130px;
+    width: 90px;
+
+}
+
+.main-nav {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+
+}
+
+.main-header {
+    margin: auto;
+    width: 100%;
+    height: 130px;
+    box-shadow: inset 0px -6px 0px #1e1e1e;
+    background-color: #292929;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    width: 100%;
+    max-width: 600px;
+    margin-bottom: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.canvas-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 400px;
+    height: 400px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 40px;
+
+}
+
+canvas {
+    border: 1px solid #000;
+}
+.search {
+    color: wheat;
+    background-color: rgb(18, 99, 73);
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.scratch {
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    position: relative;
+}
+
+.scratch h3 {
+    margin-top: 0;
+    font-size: 1.5em;
+    color: #333;
+}
+
+.scratch .close {
+    position: absolute;
+    top: 66%;
+    right: 45px;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #888;
+    font-size: 1.2em;
+    cursor: pointer;
+}
+
+.scratch .input-container {
+    position: relative;
+}
+
+.scratch .close:hover {
+    color: #003cff;
+}
+
+.scratch input[type="text"] {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    padding-right: 30px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+

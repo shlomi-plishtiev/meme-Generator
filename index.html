@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme Generator</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <header class="main-header">
+        <div class="logo"><img src="DESIGN/Meme1 - Sergei/LOGO/LOGO.png" alt="logo"></div>
+        <nav class="main-nav-container">
+            <ul class="main-nav">
+                <li><a href="#">GALLERY</a></li>
+                <li><a href="#">ABOUT</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main-content">
+        <div class="scratch">
+            <h3>Choose a template</h3>
+            <a href="#" class="close" title="Press to erase this line.">×</a>
+            <input type="text" placeholder="Quick-search for meme templates" id="quicksearch">
+        </div>
+        <section class="gallery">
+        </section>
+
+        <section class="canvas-container">
+            <canvas class="myCanvas" width="400" height="400"></canvas>
+        </section>
+        <section class="text-input">
+            <input type="text" id="textInput" placeholder="Type text here...">
+        </section>
+    </main>
+
+    <footer></footer>
+
+    <script src="js/memeService.js" type="module"></script>
+    <script src="js/main-controller.js"  type="module"></script>
+
+</body>
+
+</html>
