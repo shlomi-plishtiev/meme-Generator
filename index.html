@@ -18,20 +18,10 @@
     </header>
 
     <main class="main-content">
-
-        <div class="scratch">
-            <a href="#" class="close" title="Press to erase this line." onclick="clearFilter()">×</a>
-            <input type="text" placeholder="Quick-search for meme templates" id="quicksearch" oninput="onSearchIMG()">
-            <datalist id="imgKeywords">
-            </datalist>
-        </div>
-
         <section class="canvas-container">
             <canvas class="myCanvas" width="400" height="400" onclick="handleCanvasClick(event)"
                 onmousedown="handleMouseDown(event)" onmousemove="handleMouseMove(event)"
                 onmouseup="handleMouseUp(event)"></canvas>
-            <button onclick="onDraw()">draw</button>
-
 
             <div class="button-container">
                 <div>
@@ -55,12 +45,13 @@
                             src="DESIGN/Meme1 - Sergei/ICONS/increase font - icon.png"></button>
                     <button class="fontSize" title="Reduces text" onclick="onDecreaseFont()"><img
                             src="DESIGN/Meme1 - Sergei/ICONS/decrease font - icon.png"></button>
-                    <button class="colorPicker" onclick="document.querySelector('.color-picker').click()">
-                        <img src="DESIGN/Meme1 - Sergei/ICONS/paint-board-and-brush.png" alt="Color Picker">
-                    </button>
-                    <input type="color" class="color-picker" onchange="onColorChange(event)" title="Choose text color">
                     <button class="clear-line" title="clear-line" onclick="onDeleteLine()"><img
                             src="DESIGN/Meme1 - Sergei/ICONS/trash.png"></button>
+                            <button class="color-picker" title="Choose text color" onclick="document.getElementById('color-picker').click()">
+                                <img src="DESIGN/Meme1 - Sergei/ICONS/paint-board-and-brush.png" alt="Color Picker">
+                            </button>
+                            <input type="color" id="color-picker" onchange="onColorChange(event)" >
+
                 </div>
                 <div>
                     <button class="download" title="download" onclick="onDownloadCanvas()"><img
@@ -72,10 +63,10 @@
                             src="DESIGN/Meme1 - Sergei/ICONS/center-text-alignment.png"></button>
                     <button class="align-left" title="align-left" onclick="onTextAlignment('left')"><img
                             src="DESIGN/Meme1 - Sergei/ICONS/align-to-right.png"></button>
-                    <button class="random" onclick="generateRandomMeme()"><img
+                    <button class="random" title="make random meme" onclick="generateRandomMeme()"><img
                             src="DESIGN/Meme1 - Sergei/ICONS/paper-box-computer-icons-symbol-random-icons-thumbnail.jpg"></button>
 
-                    <button class="fc" onclick="onUploadImg()">
+                    <button class="fc"title="shere in facebook" onclick="onUploadImg()">
                         <img src="DESIGN/Meme1 - Sergei/ICONS/facebook-logo.png">
                     </button>
                 </div>
@@ -85,7 +76,7 @@
                     <input type="file" class="file-input" onchange="onImgInput(event)" accept="image/*"
                         style="display: none;" />
 
-                    <button class="save-meme-button" onclick="onSaveMeme()"><img
+                    <button class="save-meme-button" title="save" onclick="onSaveMeme()"><img
                             src="DESIGN/Meme1 - Sergei/ICONS/—Pngtree—vector save icon_3785584.png"></button>
 
                     <button class="sticker-gallery" onclick="addEmojiSticker('😂')">😂</button>
@@ -93,19 +84,17 @@
                     <button class="sticker-gallery" onclick="addEmojiSticker('❤️')">❤️</button>
                 </div>
             </div>
-
-
         </section>
-
-
-
+        <div class="scratch">
+            <a href="#" class="close" title="Press to erase this line." onclick="clearFilter()">×</a>
+            <input type="text" placeholder="Quick-search for meme templates" id="quicksearch" oninput="onSearchIMG()">
+            <datalist id="imgKeywords">
+            </datalist>
+        </div>
 
         <section class="gallery">
         </section>
     </main>
-
-    <footer></footer>
-
     <script src="js/memeService.js"></script>
     <script src="js/utill.js"></script>
     <script src="js/galleryController.js"></script>

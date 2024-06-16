@@ -1,4 +1,4 @@
-.sticker-gallery{
+.sticker-gallery {
     background-color: #e7e7e7;
     color: white;
     border: none;
@@ -12,11 +12,23 @@
     position: relative;
     bottom: 8px;
 }
-
+.close-canvas {
+    position: absolute;
+    right: -30px;
+    bottom: 125%;
+    background-color: transparent;
+    border: none;
+    color: #ffffff;
+    font-size: 25px;
+    cursor: pointer;
+}
 .download,
-.fc,
+.random,
+.text-input,
 .fileInput,
+.fc,
 .fontSize,
+.color-picker,
 .addLine,
 .switch,
 .clear,
@@ -25,9 +37,7 @@
 .align-left,
 .align-center,
 .fontFamilySelect,
-.colorPicker,
-.save-meme-button,
-.random {
+.save-meme-button{
     background-color: #e7e7e7;
     color: white;
     border: none;
@@ -39,11 +49,13 @@
 }
 
 .download:hover,
+.text-input:hover,
+.random:hover,
 .fileInput:hover,
 .fc:hover,
 .sticker-gallery:hover,
 .fontSize:hover,
-.colorPicker:hover,
+.color-picker:hover,
 .addLine:hover,
 .switch:hover,
 .clear:hover,
@@ -52,38 +64,53 @@
 .align-left:hover,
 .align-center:hover,
 .fontFamilySelect:hover,
-.save-meme-button:hover,
-.random:hover {
-    background-color: #b6b4b4;
+.save-meme-button:hover {
+    background-color: #b6b6b6;
     transform: scale(1.05);
 }
 
-.download:active,
-.fc:active,
-.fileInput:active,
-.sticker-gallery:active,
-.fontSize:active,
-.colorPicker:active,
-.addLine:active,
-.switch:active,
-.clear:active,
-.clear-line:active,
-.align-right:active,
-.align-left:active,
-.align-center:active,
-.fontFamilySelect:active,
-.save-meme-button:active,
-.random:active {
-    background-color: #e0e0e0;
-}
-
-.close-canvas {
-    position: absolute;
-    top: 0px;
-    right: 8px;
-    background-color: transparent;
-    border: none;
+.fontFamilySelect {
+    background-color: #d1d1d1;
     color: #000000;
-    font-size: 25px;
-    cursor: pointer;
+}
+.download::before,
+.text-input::before,
+.fileInput::before,
+.fc::before,
+.sticker-gallery::before,
+.fontSize::before,
+.color-picker::before,
+.addLine::before,
+.switch::before,
+.clear::before,
+.clear-line::before,
+.align-right::before,
+.align-left::before,
+.align-center::before,
+.fontFamilySelect::before,
+.save-meme-button::before,
+.random::before {
+    content: "";
+    background: linear-gradient(45deg,
+            #ff0000,
+            #ff7300,
+            #fffb00,
+            #48ff00,
+            #00ffd5,
+            #002bff,
+            #7a00ff,
+            #ff00c8,
+            #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(50px);
+    -webkit-filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing-canvas-container 20s linear infinite;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
 }

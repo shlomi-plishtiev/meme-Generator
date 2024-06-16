@@ -1,32 +1,124 @@
-
-@media (max-width: 600px) {
-    .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .main-nav {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .main-nav li {
-        width: 100%;
-        text-align: center;
-    }
-
-    .main-nav a {
-        display: block;
-        width: 100%;
-        padding: 15px 0;
-    }
-
+@media (max-width: 420px) {
+ 
+        body {
+            background-image: url("../DESIGN/48sq6r.webp");
+            background-size: cover; 
+            background-position: center;
+        }
+    
     .main-content {
         padding: 10px;
     }
-
-    .controls {
+    .canvas-container {
+        width: 100%;
+        margin: auto;
         margin-bottom: 10px;
+    }
+
+    .myCanvas {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+   
+
+    .text-controls .text-input,
+    .text-controls .color-picker {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        width: 100%;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+    .close-canvas {
+        position: absolute;
+       top: -10px;
+        left:80%;
+        border: none;
+        color: #ffffff;
+        font-size: 24px; 
+    }
+}
+@media (max-width: 1000px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 10px;
+        width: 100%;
+        margin: 10px auto;
+    }
+
+    .gallery img {
+        height: 100%;
+        width: 100%;
+        
+    }
+
+    
+
+    .button-container {
+        position: static;
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .canvas-container {
+        position: relative;
+        max-width: 500px;
+        margin: auto;
+    }
+
+    .myCanvas {
+        width: 100%;
+        height: 100%;
+        margin: auto;
+    }
+
+
+
+    .sticker-gallery,
+    .download,
+    .fc,
+    .fileInput,
+    .fontSize,
+    .addLine,
+    .switch,
+    .clear,
+    .clear-line,
+    .align-right,
+    .align-left,
+    .align-center,
+    .fontFamilySelect,
+    .colorPicker,
+    .save-meme-button,
+    .random {
+        font-size: 14px;
+        padding: 5px;
+        
+    }
+
+    .close-canvas {
+        position: absolute;
+       top: -10px;
+        left:90%;
+        border: none;
+        color: #ffffff;
+        font-size: 24px; 
+    }
+}
+@media (max-width: 600px) {
+
+    .main-content {
+        padding: 10px;
     }
 
     .canvas-container {
@@ -39,7 +131,7 @@
     .myCanvas {
         width: 100%;
         height: auto;
-                margin: auto;
+        margin: auto;
 
     }
 
@@ -71,93 +163,9 @@
         align-items: center;
     }
 }
-@media (max-width: 400px) {
-    .main-header {
-        flex-direction: column;
-        align-items: flex-start;
-    }
 
-    .main-nav {
-        flex-direction: column;
-        width: 100%;
-    }
 
-    .main-nav li {
-        width: 100%;
-        text-align: center;
-    }
 
-    .main-nav a {
-        display: block;
-        width: 100%;
-        padding: 15px 0;
-        text-align: center; 
-    }
 
-    .main-content {
-        padding: 10px;
-    }
 
-    .controls {
-        margin-bottom: 10px;
-    }
 
-    .canvas-container {
-        width: 100%;
-        margin: auto;
-      
-        margin-bottom: 10px;
-    }
-
-    .myCanvas {
-        width: 100%;
-        height: auto;
-        margin: auto;
-    }
-
-    .text-controls {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-        margin-bottom: 10px;
-        width: 100%; 
-    }
-
-    .text-controls .text-input,
-    .text-controls .color-picker {
-        width: 100%;
-        box-sizing: border-box; 
-    }
-
-    .buttons {
-        flex-direction: column;
-        align-items: center;
-        gap: 5px;
-        width: 100%; 
-    }
-    .gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-@media (max-width: 420px) {
-    .download,
-    .fc,
-    .fileInput,
-    .fontSize,
-    .addLine,
-    .switch,
-    .clear,
-    .clear-line,
-    .align-right,
-    .align-left,
-    .align-center,
-    .fontFamilySelect,
-    .colorPicker,
-    .save-meme-button,
-    .random {
-      height: 45px;
-    }
-  
-}

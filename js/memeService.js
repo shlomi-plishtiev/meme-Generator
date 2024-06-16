@@ -21,7 +21,12 @@ var gImgs = [
     { id: 20, url: 'meme-imgs/meme-imgs (various aspect ratios)/19.jpg', keywords: ['funny', 'dog'] },
     { id: 21, url: 'meme-imgs/meme-imgs (various aspect ratios)/img4.jpg', keywords: ['cat', 'funny'] },
     { id: 22, url: 'meme-imgs/meme-imgs (various aspect ratios)/drevil.jpg', keywords: ['baby', 'happy'] },
-    { id: 23, url: 'meme-imgs/meme-imgs (various aspect ratios)/img6.jpg', keywords: ['baby', 'dog'] },
+    { id: 24, url: 'meme-imgs/meme-imgs (various aspect ratios)/img6.jpg', keywords: ['baby', 'dog'] },
+    { id: 25, url: 'meme-imgs/meme-imgs (square)/o4n49.jpg', keywords: ['baby', 'dog'] },
+    { id: 26, url: 'meme-imgs/meme-imgs (square)/1heuxv.jpg', keywords: ['baby', 'dog'] },
+    { id: 27, url: 'meme-imgs/meme-imgs (square)/ybuzd.jpg', keywords: ['baby', 'dog'] },
+    { id: 28, url: 'meme-imgs/meme-imgs (square)/Smart-nibba-meme-9.jpg', keywords: ['baby', 'dog'] },
+    { id: 29, url: 'meme-imgs/meme-imgs (square)/Mdc6m5sM_400x400.jpg', keywords: ['baby', 'dog'] },
 ]
 var gMeme = {
     selectedImgId: null,

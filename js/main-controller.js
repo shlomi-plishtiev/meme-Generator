@@ -245,6 +245,7 @@ function onDecreaseFont() {
 function addLineHandler() {
     addLine()
     selectedLineIdx = getMeme().lines.length - 1
+    document.querySelectorAll('.text-input').forEach(input => input.value = '')
     renderMeme()
 }
 function switchLineHandler() {
@@ -392,5 +393,6 @@ function addEmojiSticker(emoji) {
     meme.lines.push(newSticker)
     renderMeme()
 }
+
 
 
