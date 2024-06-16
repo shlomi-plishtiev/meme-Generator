@@ -7,57 +7,110 @@
     <title>Meme Generator</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/buttons.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/input.css">
 </head>
 
-<body>
+<body onload="onInit()">
     <header class="main-header">
         <div class="logo"><img src="DESIGN/Meme1 - Sergei/LOGO/LOGO.png" alt="logo"></div>
-        <nav class="main-nav-container">
-            <ul class="main-nav">
-                <li><a href="#">GALLERY</a></li>
-                <li><a href="#">ABOUT</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main class="main-content">
+
         <div class="scratch">
-            <h3>Choose a template</h3>
-            <a href="#" class="close" title="Press to erase this line.">×</a>
-            <input type="text" placeholder="Quick-search for meme templates" id="quicksearch">
+            <a href="#" class="close" title="Press to erase this line." onclick="clearFilter()">×</a>
+            <input type="text" placeholder="Quick-search for meme templates" id="quicksearch" oninput="onSearchIMG()">
+            <datalist id="imgKeywords">
+            </datalist>
         </div>
 
-
         <section class="canvas-container">
-            <canvas class="myCanvas" width="400" height="400"></canvas>
-            <input type="text" class="topText" placeholder="Top text" oninput="onTextInputChange(event)">
-            <input hidden type="text" class="topText2" placeholder="Bottom text" oninput="onTextInputChange(event)">
-            <button onclick="addLineHandler()">Add Line</button>
-            <button class="switchLine" onclick="switchLineHandler()">Switch Line</button>
-            
-            <!-- <button class="addLine" onclick="addLineHandler()"><img src="DESIGN/Meme1 - Sergei/ICONS/add.png"></button> -->
-            <input type="color" class="colorPicker" onchange="onColorChange(event)" title="Choose text color">
+            <canvas class="myCanvas" width="400" height="400" onclick="handleCanvasClick(event)"
+                onmousedown="handleMouseDown(event)" onmousemove="handleMouseMove(event)"
+                onmouseup="handleMouseUp(event)"></canvas>
+            <button onclick="onDraw()">draw</button>
 
-            <button class="fontSize" onclick="onIncreaseFont()"><img
-                    src="DESIGN/Meme1 - Sergei/ICONS/increase font - icon.png"></button>
-            <button class="fontSize" onclick="onDecreaseFont()"><img
-                    src="DESIGN/Meme1 - Sergei/ICONS/decrease font - icon.png"></button>
-            <button class="download" onclick="onDownloadCanvas()"><img
-                    src="DESIGN/Meme1 - Sergei/ICONS/downlaod.png"></button>
+
+            <div class="button-container">
+                <div>
+                    <input type="text" class="text-input" placeholder="Enter text" oninput="onTextInputChange(event)">
+                    <select class="fontFamilySelect" title="change font" onchange="onFontFamilyChange()">
+                        <option value="Impact">Impact</option>
+                        <option value="Arial">Arial</option>
+                        <option value="serif">serif</option>
+                        <option value="Comic sans MS">Comic sans MS</option>
+                        <option value="Brush Script MT">cursive</option>
+                        <option value="monospace">monospace</option>
+                    </select>
+                    <button class="close-canvas" onclick="closeCanvasContainer()">x</button>
+                </div>
+                <div>
+                    <button class="addLine" title="add Line" onclick="addLineHandler()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/add.png"></button>
+                    <button class="switch" title="switch line" onclick="switchLineHandler()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/up-and-down-opposite-double-arrows-side-by-side.png"></button>
+                    <button class="fontSize" title="enlarges text" onclick="onIncreaseFont()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/increase font - icon.png"></button>
+                    <button class="fontSize" title="Reduces text" onclick="onDecreaseFont()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/decrease font - icon.png"></button>
+                    <button class="colorPicker" onclick="document.querySelector('.color-picker').click()">
+                        <img src="DESIGN/Meme1 - Sergei/ICONS/paint-board-and-brush.png" alt="Color Picker">
+                    </button>
+                    <input type="color" class="color-picker" onchange="onColorChange(event)" title="Choose text color">
+                    <button class="clear-line" title="clear-line" onclick="onDeleteLine()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/trash.png"></button>
+                </div>
+                <div>
+                    <button class="download" title="download" onclick="onDownloadCanvas()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/downlaod.png"></button>
+
+                    <button class="align-right" title="align-right" onclick="onTextAlignment('right')"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/align-to-left.png"></button>
+                    <button class="align-center" title="align-center" onclick="onTextAlignment('center')"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/center-text-alignment.png"></button>
+                    <button class="align-left" title="align-left" onclick="onTextAlignment('left')"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/align-to-right.png"></button>
+                    <button class="random" onclick="generateRandomMeme()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/paper-box-computer-icons-symbol-random-icons-thumbnail.jpg"></button>
+
+                    <button class="fc" onclick="onUploadImg()">
+                        <img src="DESIGN/Meme1 - Sergei/ICONS/facebook-logo.png">
+                    </button>
+                </div>
+                <div>
+                    <button class="fileInput" onclick="document.querySelector('.file-input').click()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/pngkit_upload-icon-png_1298005.png"></button>
+                    <input type="file" class="file-input" onchange="onImgInput(event)" accept="image/*"
+                        style="display: none;" />
+
+                    <button class="save-meme-button" onclick="onSaveMeme()"><img
+                            src="DESIGN/Meme1 - Sergei/ICONS/—Pngtree—vector save icon_3785584.png"></button>
+
+                    <button class="sticker-gallery" onclick="addEmojiSticker('😂')">😂</button>
+                    <button class="sticker-gallery" onclick="addEmojiSticker('🔥')">🔥</button>
+                    <button class="sticker-gallery" onclick="addEmojiSticker('❤️')">❤️</button>
+                </div>
+            </div>
+
+
         </section>
+
+
+
+
         <section class="gallery">
         </section>
-
     </main>
 
     <footer></footer>
 
-    <script src="js/memeService.js" type="module"></script>
-    <script src="js/main-controller.js" type="module"></script>
-    <script src="js/galleryController.js" type="module"></script>
-    <script src="js/Upload-Image.js" type="module"></script>
-
-
+    <script src="js/memeService.js"></script>
+    <script src="js/utill.js"></script>
+    <script src="js/galleryController.js"></script>
+    <script src="js/main-controller.js"></script>
+    <script src="js/Upload-Image.js"></script>
 </body>
 
 </html>

@@ -1,19 +1,163 @@
+
 @media (max-width: 600px) {
-    .main-header, .main-nav-container {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .main-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav li {
+        width: 100%;
         text-align: center;
     }
 
-    .main-nav ul {
-        padding: 0;
+    .main-nav a {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
     }
 
-    .main-nav ul li {
-        display: inline;
-        margin: 0 10px;
+    .main-content {
+        padding: 10px;
+    }
+
+    .controls {
+        margin-bottom: 10px;
+    }
+
+    .canvas-container {
+        width: 100%;
+        margin: auto;
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .myCanvas {
+        width: 100%;
+        height: auto;
+                margin: auto;
+
+    }
+
+    .text-controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 10px;
+    }
+
+    .text-controls .text-input,
+    .text-controls .color-picker {
+        width: 100%;
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+    }
+
+    .buttons button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
     }
 }
-@media (max-width: 420px) {
-  .download, .fontSize {
-      height: 48px;
+@media (max-width: 400px) {
+    .main-header {
+        flex-direction: column;
+        align-items: flex-start;
     }
-  }
+
+    .main-nav {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .main-nav li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .main-nav a {
+        display: block;
+        width: 100%;
+        padding: 15px 0;
+        text-align: center; 
+    }
+
+    .main-content {
+        padding: 10px;
+    }
+
+    .controls {
+        margin-bottom: 10px;
+    }
+
+    .canvas-container {
+        width: 100%;
+        margin: auto;
+      
+        margin-bottom: 10px;
+    }
+
+    .myCanvas {
+        width: 100%;
+        height: auto;
+        margin: auto;
+    }
+
+    .text-controls {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        margin-bottom: 10px;
+        width: 100%; 
+    }
+
+    .text-controls .text-input,
+    .text-controls .color-picker {
+        width: 100%;
+        box-sizing: border-box; 
+    }
+
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 5px;
+        width: 100%; 
+    }
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 420px) {
+    .download,
+    .fc,
+    .fileInput,
+    .fontSize,
+    .addLine,
+    .switch,
+    .clear,
+    .clear-line,
+    .align-right,
+    .align-left,
+    .align-center,
+    .fontFamilySelect,
+    .colorPicker,
+    .save-meme-button,
+    .random {
+      height: 45px;
+    }
+  
+}

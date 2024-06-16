@@ -1,18 +1,14 @@
-// galleryController.js
 
-import { setSelectedImg, gImgs } from './memeService.js'
-import { renderMeme } from './main-controller.js'
+function renderGallery(images) {
+    const gallerySection = document.querySelector('.gallery')
+    gallerySection.innerHTML = ''
 
-function renderGallery() {
-    const gallery = document.querySelector('.gallery')
-    gallery.innerHTML = ''
-
-    gImgs.forEach(img => {
+    images.forEach(img => {
         const imgElement = document.createElement('img')
         imgElement.src = img.url
-        imgElement.classList.add('gallery-img')
-        imgElement.onclick = () => onImgSelect(img.id)
-        gallery.appendChild(imgElement)
+        imgElement.alt = img.id
+        imgElement.addEventListener('click', () => onImgSelect(img.id))
+        gallerySection.appendChild(imgElement)
     })
 }
 
@@ -22,4 +18,3 @@ function onImgSelect(imgId) {
     document.querySelector('.canvas-container').style.display = 'block'
 }
 
-export { renderGallery }
